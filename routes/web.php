@@ -15,12 +15,13 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/', [TaskController::class, 'index'])->name('tasks.index');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
 Route::post('/', [TaskController::class, 'store'])->name('tasks.store');
 Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
