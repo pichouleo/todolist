@@ -48,14 +48,17 @@ class TaskController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required',
+            'status' => 'in:Urgent,En cours,Terminé',
         ]);
 
         $task->update([
             'name' => $validated['name'],
+            'status' => $validated['status'],
         ]);
 
         return redirect()->route('tasks.index');
     }
+
 
     public function destroy(Task $task)
     {
@@ -63,5 +66,7 @@ class TaskController extends Controller
 
         return redirect()->route('tasks.index');
     }
+
+
 
     }

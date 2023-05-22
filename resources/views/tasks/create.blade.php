@@ -8,7 +8,7 @@
     <form action="{{ route('tasks.store') }}" method="POST" class="flex items-center justify-between mx-auto bg-white border-b rounded-lg"  style="width:50%; padding:10px;margin-top:20px;">
         @csrf
         <div class=" form-group">
-            <label for="name" class="font-medium text-gray-900 whitespace-nowrap">Nom de la tache : </label>
+            <label for="name" class="text-gray-700">Nom de la tache : </label>
             <input type="text" name="name" class="form-control border-gray-300 border rounded-md">
         </div>
         <div>

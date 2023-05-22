@@ -17,6 +17,7 @@ class CreateTasksTable extends Migration
             $table->string('name');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
+            $table->enum('status', ['Urgent', 'En cours', 'Terminé'])->default('En cours');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
