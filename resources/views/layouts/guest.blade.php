@@ -15,12 +15,12 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0"  style="background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);">
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gradient-to-b from-gray-200 to-gray-100">
             <div>
-                <div style="width:300px;margin: 0 auto;">
-                    <x-application-logo/>   
-                </div>
-                <p class="text-center text-gray-500" style="margin:-20px 0 10px 0;">Bienvenue sur notre application de liste de tâches !</p>
+                <a href="/">
+                    <x-application-logo/>
+                </a>
+                <p class="text-center text-gray-500">Bienvenue sur notre application de liste de tâches !</p>
             </div>
 
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">

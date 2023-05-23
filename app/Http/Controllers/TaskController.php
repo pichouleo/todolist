@@ -13,21 +13,19 @@ class TaskController extends Controller
         return view('tasks.index', compact('userTasks'));
     }
 
-    public function create()
-    {
-        return view('tasks.create');
-    }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required',
+            'status' => 'required|in:En cours,Terminé,Urgent'
         ]);
 
         $task = Task::create([
             'name' => $validated['name'],
-            'user_id' => auth()->user()->id
-        ]);        
+            'user_id' => auth()->user()->id,
+            'status' => $validated['status']
+        ]);       
         
         return redirect()->route('tasks.index');
     }

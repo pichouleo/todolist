@@ -13,7 +13,7 @@
             <label for="name" class="text-gray-700">Nom de la tache : </label>
             <input type="text" name="name" id="name" value="{{ $task->name }}"  class="form-control border-gray-300 border rounded-md">
         </div>
-        <select name="status">
+        <select name="status"  class="bg-white border-gray-300 border rounded-md py-2 px-3 pr-8 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
             <option value="En cours" {{ $task->status === 'En cours' ? 'selected' : '' }}>En cours</option>
             <option value="Terminé" {{ $task->status === 'Terminé' ? 'selected' : '' }}>Terminé</option>
             <option value="Urgent" {{ $task->status === 'Urgent' ? 'selected' : '' }}>Urgent</option>
